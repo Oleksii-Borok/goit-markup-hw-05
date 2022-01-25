@@ -1,5 +1,6 @@
 :root {
   --blue-color: #2196f3;
+  --blue-overlay: rgba(33, 150, 243, 0.9);
   --sec-logo-color: #000000;
   --sec-black: #212121;
   --main-text-color: #757575;
@@ -96,6 +97,7 @@ body {
   padding: 32px 0;
   display: flex;
   align-items: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header .logo {
@@ -157,7 +159,6 @@ body {
   bottom: -1px;
 }
 
-
 /* -------------------------main section------------------------ */
 
 .section {
@@ -196,7 +197,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
-  te
+  text-align: center;
 }
 
 /* -----------------strength----------------*/
@@ -327,6 +328,7 @@ body {
   align-items: center;
   background-color: var(--footer-icon);
   color: var(--border-clients-item);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -363,6 +365,7 @@ body {
   border: 1px solid currentColor;
   border-radius: 4px;
   color: var(--border-clients-item);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -377,6 +380,7 @@ body {
 
 .clients-icon {
   fill: currentColor;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item {
@@ -402,7 +406,7 @@ body {
   display: flex;
 }
 
-.works-item {
+.works-thumb {
   flex-basis: calc(100% / 3 - 30px);
 }
 
@@ -417,19 +421,41 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.works-link:hover .works-overlay-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .works-link {
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .works-overlay-text {
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 400;
+  letter-spacing: 0.03em;
   position: absolute;
-  width: 100%;
+  background-color: var(--blue-overlay);
+  top: 0;
+  left: 0;
   height: 100%;
-  background-color: teal;
+  width: 100%-48px;
   color: var(--white-color);
-  text-align: center;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  opacity: 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+}
+
+.overlay-block {
+  position: relative;
+  overflow: hidden;
 }
 
 /* ---------------------button---------------------- */
@@ -438,6 +464,7 @@ body {
   font-family: inherit;
   cursor: pointer;
   font-weight: 500;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-list {
@@ -471,6 +498,7 @@ body {
   color: var(--sec-black);
   font-size: 16px;
   line-height: 1.62;
+  letter-spacing: 0.06em;
   text-align: center;
   letter-spacing: 0.03em;
   padding: 6px 22px 6px 22px;
@@ -519,7 +547,8 @@ body {
   margin-bottom: 8px;
 }
 
-.footer-item {
+.footer-link {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join-title {
